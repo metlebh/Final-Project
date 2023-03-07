@@ -25,7 +25,7 @@ namespace Presentation
         }
         static void Main(string[] args)
         {
-            _adminService.Authorize();
+          Admin:  _adminService.Authorize();
             
                 while (true)
                 {
@@ -218,6 +218,12 @@ namespace Presentation
 
 
                             }
+                    case (int)MainMenuOptions.LogOut:
+                        while (true)
+                        {
+                            goto Admin;
+                        }
+
 
 
                     }

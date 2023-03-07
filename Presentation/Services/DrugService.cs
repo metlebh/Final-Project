@@ -207,7 +207,7 @@ namespace Presentation.Services
                 ConsoleHelper.WriteWithColor("You must create DrugStore first");
                 return;
             }
-            _drugStoreRepository.GetAll();
+            _drugStoreService.GetAll();
         EnterId: ConsoleHelper.WriteWithColor("*--- ENTER DRUGSTORE ID ---*");
             int id;
             bool isSucceeded = int.TryParse(Console.ReadLine(), out id);
@@ -224,11 +224,11 @@ namespace Presentation.Services
             }
 
             var drugs = _drugRepository.GetAll();
-            ConsoleHelper.WriteWithColor("*--- ALL DURGS ---**");
+            ConsoleHelper.WriteWithColor("*--- ALL DURGS ---**",ConsoleColor.DarkYellow);
 
             foreach (var drug in drugStore.Drugs)
             {
-                ConsoleHelper.WriteWithColor($"ID:{drug.Id} Name:{drug.Name} Price:{drug.Price} Count:{drug.Count}");
+                ConsoleHelper.WriteWithColor($"ID:{drug.Id} Name:{drug.Name} Price:{drug.Price} Count:{drug.Count}",ConsoleColor.Blue);
             }
         }
         public void Filter()
@@ -252,7 +252,7 @@ namespace Presentation.Services
             foreach (var drug in dbdrugs)
             {
                
-               ConsoleHelper.WriteWithColor($"NAME : {drug.Name}\nCount : {drug.Count}\nDrugstore {drug.DrugStore.Name} ", ConsoleColor.Blue);
+               ConsoleHelper.WriteWithColor($"NAME : {drug.Name}\nCount : {drug.Count}\nPrice : {drug.Price}\nDrugstore {drug.DrugStore.Name} ", ConsoleColor.Blue);
 
                
             }

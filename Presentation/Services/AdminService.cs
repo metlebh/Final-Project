@@ -15,7 +15,7 @@ namespace Presentation.Sevices
         public Admin Authorize()
         {
 
-        LoginDes: ConsoleHelper.WriteWithColor("WELCOME DRUGSTOE PLEACE LOGIN", ConsoleColor.DarkYellow);
+        LoginDes: ConsoleHelper.WriteWithColor("WELCOME DRUGSTORE PLEASE LOGIN", ConsoleColor.DarkYellow);
             
             ConsoleHelper.WriteWithColor("*--- USER NAME ---*", ConsoleColor.DarkYellow);
             string username = Console.ReadLine() ;

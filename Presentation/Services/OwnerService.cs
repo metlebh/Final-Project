@@ -138,18 +138,18 @@ namespace Presentation.Services
             GetAll();
             if (_ownerRepository.GetAll().Count == 0)
             {
-            NewGroupDes: ConsoleHelper.WriteWithColor("*--- There is no owner, you want to create---*\n |||y or n|||", ConsoleColor.DarkRed);
+            NewGroupDes3: ConsoleHelper.WriteWithColor("*--- There is no owner, you want to create---*\n |||y or n|||", ConsoleColor.DarkRed);
                 char decision;
                 bool isSucceededResult = char.TryParse(Console.ReadLine(), out decision);
                 if (!isSucceededResult)
                 {
                     ConsoleHelper.WriteWithColor("Your selection is not in the correct format\n*Pleace write y/n", ConsoleColor.DarkRed);
-                    goto NewGroupDes;
+                    goto NewGroupDes3;
                 }
                 if (!(decision == 'y' || decision == 'n'))
                 {
                     ConsoleHelper.WriteWithColor("Your selection is not correct ", ConsoleColor.DarkRed);
-                    goto NewGroupDes;
+                    goto NewGroupDes3;
                 }
 
                 if (decision == 'y')
