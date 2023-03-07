@@ -150,12 +150,13 @@ namespace Presentation.Services
                 string name = Console.ReadLine();
                 ConsoleHelper.WriteWithColor("*---- ENTER DRUGSTORE ADRESS ----*", ConsoleColor.DarkCyan);
                 string address = Console.ReadLine();
-                ConsoleHelper.WriteWithColor("*---- ENTER DRUGSTORE NUMBER ----*", ConsoleColor.DarkCyan);
+               NUmCehsck: ConsoleHelper.WriteWithColor("*---- ENTER DRUGSTORE NUMBER ----*", ConsoleColor.DarkCyan);
                 int contactnumber;
                 bool isSucceeded = int.TryParse(Console.ReadLine(), out contactnumber);
                 if (!isSucceeded)
                 {
                     ConsoleHelper.WriteWithColor("Entered number is not correct format", ConsoleColor.DarkRed);
+                    goto NUmCehsck;
                 }
             EmailDes: ConsoleHelper.WriteWithColor("*---- ENTER DRUGSTORE EMAIL ----*", ConsoleColor.DarkCyan);
                 string email = Console.ReadLine();
@@ -257,7 +258,7 @@ namespace Presentation.Services
             var drugstores = _drugStoreRepository.GetAll();
             foreach (var drugstore in drugstores)
             {
-                ConsoleHelper.WriteWithColor($"ID : {drugstore.Id} Name : {drugstore} ");
+                ConsoleHelper.WriteWithColor($"ID : {drugstore.Id} Name : {drugstore.Name} ",ConsoleColor.Blue);
             }
         StoreIdDes: ConsoleHelper.WriteWithColor("*--- ENTER DRUGSTORE ID", ConsoleColor.DarkCyan);
             int drugstoreid;
